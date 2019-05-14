@@ -11,7 +11,6 @@ namespace ToDoList.Controllers
     public ActionResult Index()
     {
         return View();
-        // return new EmptyResult();
     }
   }
 }
