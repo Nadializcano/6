@@ -255,7 +255,7 @@ namespace ToDoList.Models
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
-      MySqlCommand cmd = new MySqlCommand("DELETE FROM categories WHERE id = @CategoryId; DELETE FROM categories_items WHERE category_id = @CategoryId;", conn);
+      MySqlCommand cmd = new MySqlCommand("DELETE FROM categories WHERE id = @CategoryId;", conn);
       MySqlParameter categoryIdParameter = new MySqlParameter();
       categoryIdParameter.ParameterName = "@CategoryId";
       categoryIdParameter.Value = this.GetId();

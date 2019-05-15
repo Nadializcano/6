@@ -52,5 +52,13 @@ namespace ToDoList.Controllers
       return RedirectToAction("Show",  new { id = categoryId });
     }
 
+    [HttpPost("/categories/{categoryId}/delete")]
+    public ActionResult Delete(int categoryId)
+    {
+      Category category = Category.Find(categoryId);
+      category.Delete();
+      return RedirectToAction("Index");
+    }
+
   }
 }

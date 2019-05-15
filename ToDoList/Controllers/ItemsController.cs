@@ -74,24 +74,23 @@ namespace ToDoList.Controllers
           return View("Show", model);
         }
 
-      [HttpGet("/items/{itemId}/delete")]
-        public ActionResult Delete(int itemId)
-        {
-          //Dictionary<string, object> model = new Dictionary<string, object>();
-          Item item = Item.Find(itemId);
-          item.Delete();
-          List<Item> allCategories = Category.GetAll();
-          //model.Add("item", item);
-          return RedirectToAction("Index");
-        }
+      // [HttpGet("/items/{itemId}/delete")]
+      //   public ActionResult Delete(int itemId)
+      //   {
+      //     //Dictionary<string, object> model = new Dictionary<string, object>();
+      //     Item item = Item.Find(itemId);
+      //     item.Delete();
+      //     List<Item> allCategories = Category.GetAll();
+      //     //model.Add("item", item);
+      //     return RedirectToAction("Index");
+      //   }
 
-        [HttpPost("/items/{itemId}/deleted")]
-          public ActionResult Deleted(int itemId)
+        [HttpPost("/items/{itemId}/delete")]
+          public ActionResult Delete(int itemId)
           {
             Item item = Item.Find(itemId);
-
             item.Delete();
-            return View("Index");
+            return RedirectToAction("Index");
           }
 
         [HttpPost("/items/{itemId}/categories/new")]

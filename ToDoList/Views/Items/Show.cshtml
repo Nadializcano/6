@@ -30,6 +30,9 @@
 
 <h4>Delete this item:</h4>
 
-<a href='/items/@Model["selectedItem"].GetId()/items/delete'>Delete this Item</a>
+<form action="/items/@Model["selectedItem"].GetId()/delete" method="post">
+  <button type="submit" name="button">delete Item</button>
+</form>
+
 
 <p><a href="/">Return to Main Page</a></p>
